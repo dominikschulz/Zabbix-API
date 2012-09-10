@@ -172,6 +172,14 @@ This method returns a list of hosts colliding (i.e. matching) this one. If there
 if more than one colliding host found the implementation can not know
 on which one to perform updates and will bail out.
 
+=item fetch()
+
+It's is very important to make sure that you don't forget to put the filter inside
+the params or you risk to work with the wrong host. It would also be abvisable to
+make sure you've got the correct host after fetching, e.g. by comparing it's name
+to the expected one. The filter element will only match on certain host specific
+fields. Others, like groupids oder templateids, must be set inside params.
+
 =back
 
 =head1 SEE ALSO
